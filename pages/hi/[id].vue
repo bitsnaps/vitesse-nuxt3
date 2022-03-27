@@ -3,7 +3,7 @@ import { useUserStore } from '~/stores/user'
 
 const route = useRoute()
 const user = useUserStore()
-const name = route.params.id
+const username = route.params.id
 
 watchEffect(() => {
   user.setNewName(route.params.id as string)
@@ -17,7 +17,7 @@ watchEffect(() => {
       Hi,
     </h3>
     <div text-xl>
-      {{ name }}!
+      {{ username }}!
     </div>
 
     <template v-if="user.otherNames.length">
