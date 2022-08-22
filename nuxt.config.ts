@@ -1,31 +1,30 @@
-import { defineNuxtConfig } from 'nuxt3'
+import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
-  meta: {
-    title: 'Vitesse Nuxt 3',
-    link: [
-      {
-        rel: 'icon', type: 'image/png', href: '/nuxt.png',
-      },
-    ],
-  },
-  buildModules: [
+  modules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
     '@pinia/nuxt',
+    '@nuxtjs/color-mode',
   ],
-  vueuse: {
-    ssrHandlers: true,
+  experimental: {
+    reactivityTransform: true,
+    viteNode: false,
   },
   unocss: {
-    uno: true,
-    attributify: true,
     preflight: true,
-    icons: {
-      scale: 1.2,
+  },
+  colorMode: {
+    classSuffix: '',
+  },
+  // https://github.com/nuxt/framework/issues/6204#issuecomment-1201398080
+  hooks: {
+    'vite:extendConfig': function (config: any, { isServer }: any) {
+      if (isServer) {
+        // Workaround for netlify issue
+        // https://github.com/nuxt/framework/issues/6204
+        config.build.rollupOptions.output.inlineDynamicImports = true
+      }
     },
-    shortcuts: [
-      ['btn', 'px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
-    ],
   },
 })

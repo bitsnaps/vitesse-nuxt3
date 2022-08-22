@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import { useUserStore } from '~/stores/user'
-
 const route = useRoute()
 const user = useUserStore()
-const username = route.params.id
+const name = route.params.id
 
 watchEffect(() => {
   user.setNewName(route.params.id as string)
+})
+
+definePageMeta({
+  layout: 'home',
 })
 </script>
 
@@ -17,7 +19,7 @@ watchEffect(() => {
       Hi,
     </h3>
     <div text-xl>
-      {{ username }}!
+      {{ name }}!
     </div>
 
     <template v-if="user.otherNames.length">

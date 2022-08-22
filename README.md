@@ -29,7 +29,9 @@
 
 - 🔥 The `<script setup>` syntax
 
-- 🍍 [State Management via Pinia](https://pinia.esm.dev/)
+- 🍍 [State Management via Pinia](https://pinia.esm.dev), see [./composables/user.ts](./composables/user.ts)
+
+- 📑 [Layout system](./layouts)
 
 - 📥 APIs auto importing - for Composition API, VueUse and custom composables.
 
@@ -41,7 +43,8 @@
 
 ### Nuxt Modules
 
-- [VueUse](https://github.com/vueuse/vueuse) - collection of useful composition APIs
+- [VueUse](https://github.com/vueuse/vueuse) - collection of useful composition APIs.
+- [ColorMode](https://github.com/nuxt-community/color-mode-module) - dark and Light mode with auto detection made easy with Nuxt.
 - [UnoCSS](https://github.com/antfu/unocss) - the instant on-demand atomic CSS engine.
 - [Pinia](https://pinia.esm.dev/) - intuitive, type safe, light and flexible Store for Vue.
 
@@ -53,7 +56,6 @@ We recommend using [VS Code](https://code.visualstudio.com/) with [Volar](https:
 
 - [vitesse](https://github.com/antfu/vitesse) - Opinionated Vite Starter Template
 - [vitesse-lite](https://github.com/antfu/vitesse-lite) - Lightweight version of Vitesse
-- [vitesse-nuxt3](https://github.com/antfu/vitesse-nuxt3) - Vitesse for Nuxt 3
 - [vitesse-nuxt-bridge](https://github.com/antfu/vitesse-nuxt-bridge) - Vitesse for Nuxt 2 with Bridge
 - [vitesse-webext](https://github.com/antfu/vitesse-webext) - WebExtension Vite starter template
 
